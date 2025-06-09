@@ -7,20 +7,26 @@
 </head>
 
 <body>	
-	<script>
+	<script>             
 		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+			arr = arr.map(Number);
+			let uniqueArr = [...new Set(arr)];
+			if (uniqueArr.length < 2) {
+				return -Infinity;
+			}
+			uniqueArr.sort((a, b) => b - a);
+			return uniqueArr[1];
+		}  
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
+		function Main() { 
+			let n= parseInt
+			var n = parseInt(prompt("Enter the number of elements"));
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
+				arr[i] =parseInt(prompt("Enter element " + (i+1)));
+			} 
+			alert(secondHighest(arr));         
+		} 
 		Main();
 	</script>
 
